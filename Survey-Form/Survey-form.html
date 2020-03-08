@@ -1,0 +1,84 @@
+<style>
+    body {
+        text-align: center;
+        background-color: black;
+    }
+    
+    #main {
+        background-color: white;
+        padding: 50px;
+    }
+    
+    h1 {
+        font-size: 32px;
+    }
+    
+    h2 {
+        font-size: 32px;
+    }
+    
+    p {
+        font-size: 32px;
+    }
+    
+    label {
+        font-size: 32px;
+    }
+</style>
+
+<body id="background">
+    <div id="main">
+        <h1 id="title"> Test Survey Form </h1>
+        <p id="description"> A test survey form for a FreeCodeCamp project. </p>
+
+        <form id="survey-form">
+            <label id="name-label" for="name">Name</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your name here" required><br>
+
+            <label id="email-label" for="email">Email</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email here" required><br>
+
+
+            <label id="number-label" for="number">Age (Optional) </label><br>
+            <input type="number" min="18" max="99" id="number" name="number" placeholder="Enter your age here"><br>
+
+
+
+            <label for="dropdown"> Which option best describes your current role?</label><br>
+            <select id="dropdown"> 
+            <option value="default" disabled selected> Select your role </option>
+            <option value="Option1"> Student </option><br>
+            <option value="Option2"> Full Time Job </option><br>
+            <option value="Option3"> Part Time Job </option><br>
+            <option value="Option4"> Unemployed </option><br>
+        </select>
+
+            <br><label> How happy are you with this test?</label> <br>
+            <input type="radio" id="positive" name="opinion" value="happy">
+            <label for="positive">Happy</label><br>
+
+            <input type="radio" id="neutral" name="opinion" value="neutral">
+            <label for="neutral">Neutral</label><br>
+
+            <input type="radio" id="negative" name="opinion" value="negative">
+            <label for="negative">Negative</label><br>
+
+            <label> What would you suggest improving about this survey? (Click all that apply) </label> <br>
+            <input type="checkbox" id="option1" name="option1" value="Layout">
+            <label for="option1"> Layout</label><br>
+            <input type="checkbox" id="option2" name="option2" value="Aesthetics">
+            <label for="option2"> Aesthetics</label><br>
+            <input type="checkbox" id="option3" name="option3" value="Usability">
+            <label for="option3"> Usability </label><br>
+
+            <label for="comments"> Any additional comments? Leave them down below! </label> <br>
+            <textarea id="comments" rows="3" cols="50" placeholder="Text for additional comments"> </textarea> <br>
+
+
+            <br> <input id="submit" type="submit" value="Submit">
+        </form>
+
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</body>
