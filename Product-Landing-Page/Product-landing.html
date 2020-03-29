@@ -1,0 +1,200 @@
+<style>
+    body {
+        background-color: rgb(27, 27, 30);
+        color: white;
+        text-align: center;
+        font-family: sans-serif;
+    }
+    
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        text-align: right;
+    }
+    
+    header h1 {
+        padding-left: 50px;
+        float: left;
+        margin: auto 0;
+    }
+    
+    #header-img {
+        float: left;
+    }
+    
+    nav {
+        background-color: rgb(27, 27, 30);
+        margin: 0;
+        width: 100%;
+        z-index: 999;
+        border-bottom: 2px solid darkslategrey;
+    }
+    
+    nav ul {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        z-index: 1;
+    }
+    
+    nav ul li {
+        position: relative;
+        display: inline-block;
+        list-style-type: none;
+        text-align: right;
+    }
+    
+    nav ul a {
+        color: white;
+        font-size: 30px;
+        display: block;
+        text-decoration: none;
+        padding: 10px 15px;
+    }
+    
+    nav ul li a:hover {
+        color: orange;
+    }
+    
+    .form {
+        display: inline-block;
+        margin: 0 auto;
+    }
+    
+    .formdiv {
+        display: block;
+        text-align: center;
+    }
+    
+    .nav-link a {}
+    
+    #list ul li {
+        list-style-type: none;
+        position: block;
+        width: 100%;
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+    }
+    
+    .grid-item {
+        font-size: 30px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .flex-container {
+        padding: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .flex-item {
+        border: 1px solid white;
+        padding: 20px;
+        font-size: 30px;
+    }
+    
+    .flex-item h1 {
+        margin: auto 0;
+    }
+    
+    @media (max-width: 800px) {
+        .nav-link a {
+            font-size: 10px;
+        }
+    }
+</style>
+
+
+<header id="header">
+    <img src="https://via.placeholder.com/50" alt="Product Picture!" id="header-img">
+    <h1> Mock Website Design </h1>
+    <nav id="nav-bar">
+        <ul>
+
+            <li>
+                <a class="nav-link" href="#features"> Features </a>
+            </li>
+
+            <li>
+                <a class="nav-link" href="#video"> More detail </a>
+            </li>
+
+            <li>
+                <a class="nav-link" href="#pricing"> Pricing </a>
+            </li>
+        </ul>
+
+    </nav>
+
+</header>
+
+<body>
+
+    <div class="formdiv">
+        <h1> Want More Detail? </h1>
+        <form id="form" action="mailto:https://www.freecodecamp.com/email-submit" method="POST" enctype="text/plain">
+            <br>
+            <input id="email" type="email" required placeholder="Enter a valid email address" id="email" size="44" name="email"><br>
+            <br>
+            <br> <input id="submit" type="submit" name="submit" value="Get Started"><br>
+
+        </form>
+    </div>
+
+
+    <div id="list">
+        <h1> Why Choose us? </h1>
+        <ul id="features" class=grid-container>
+
+            <li class=grid-item>
+                <a href="https://placeholder.com"><img src="https://via.placeholder.com/75"></a>
+                <h1> 24/7 Customer Service </h1>
+                <p> Our customer service is round the clock, so you'll never go unanswered </p>
+            </li>
+            <li class=grid-item>
+                <a href="https://placeholder.com"><img src="https://via.placeholder.com/75"></a>
+                <h1> 99.9% Uptime </h1>
+                <p> Over the last five years, we've prided ourselves on our 99.9% uptime across all our customers </p>
+            </li>
+
+            <li class=grid-item>
+                <a href="https://placeholder.com"><img src="https://via.placeholder.com/75"></a>
+                <h1> Pricing </h1>
+                <p> If you find someone with a similar level of service for cheaper, we'll match it </p>
+            </li>
+        </ul>
+    </div>
+    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/9xwazD5SyVg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div id="pricing" class="flex-container">
+
+        <div class=flex-item>
+            <h1> Product 1 </h1>
+            <p> Description </p>
+            <h2> $99/yr </h2>
+
+            <button> Select </button>
+        </div>
+
+        <div class=flex-item>
+            <h1> Product 2 </h1>
+            <p> Description </p>
+            <h2> $199/yr </h2>
+            <button> Select </button>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+
+
+
+</body>
