@@ -1,0 +1,497 @@
+<style>
+    body {
+        font-family: sans-serif;
+    }
+    
+    header {
+        font-size: 30px;
+    }
+    
+    #navbar {
+        height: 100%;
+        width: 300px;
+        position: fixed;
+        border-right: 1px solid black;
+    }
+    
+    #navbar header {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+    }
+    
+    #navbar>* {
+        border: 1px solid black;
+    }
+    
+    nav ul li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+    /* Change the link color on hover */
+    
+    nav ul li a:hover {
+        background-color: #555;
+        color: white;
+    }
+    
+    #main-doc {
+        position: absolute;
+        margin-left: 310px;
+        padding: 20px;
+        margin-bottom: 110px;
+    }
+    
+    .mainsection {
+        display: block;
+    }
+    
+    @media (max-width: 800px) {
+        header {
+            font-size: 14px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+</style>
+
+<body>
+
+    <nav id="navbar">
+        <header> C# Documentation </header>
+        <ul>
+
+            <li> <a href="#Introduction" class="nav-link"> Introduction </a> </li>
+            <li> <a href="#Hello_World" class="nav-link"> Hello World </a> </li>
+            <li> <a href="#Types_And_Variables" class="nav-link"> Types and Variables </a> </li>
+            <li> <a href="#Expressions" class="nav-link"> Expressions </a> </li>
+            <li> <a href="#Statements" class="nav-link"> Statements </a> </li>
+            <li> <a href="#References" class="nav-link"> References </a> </li>
+        </ul>
+    </nav>
+
+    <main id="main-doc">
+
+
+        <section id="Introduction" class="main-section">
+            <header> Introduction </header>
+            <p> C# is an object-oriented language, but C# further includes support for component-oriented programming. Contemporary software design increasingly relies on software components in the form of self-contained and self-describing packages of functionality.
+                Key to such components is that they present a programming model with properties, methods, and events. They have attributes that provide declarative information about the component. They incorporate their own documentation. C# provides
+                language constructs to support directly these concepts, making C# a natural language in which to create and use software components.</p>
+            <p>
+                Several C# features aid in the construction of robust and durable applications. Garbage collection automatically reclaims memory occupied by unreachable unused objects. Exception handling provides a structured and extensible approach to error detection
+                and recovery. The type-safe design of the language makes it impossible to read from uninitialized variables, to index arrays beyond their bounds, or to perform unchecked type casts.
+            </p>
+            <p>
+                C# has a unified type system. All C# types, including primitive types such as int and double, inherit from a single root object type. Thus, all types share a set of common operations, and values of any type can be stored, transported, and operated upon
+                in a consistent manner. Furthermore, C# supports both user-defined reference types and value types, allowing dynamic allocation of objects as well as in-line storage of lightweight structures.
+            </p>
+            <p>
+                To ensure that C# programs and libraries can evolve over time in a compatible manner, much emphasis has been placed on versioning in C#'s design. Many programming languages pay little attention to this issue. As a result, programs written in those other
+                languages break more often than necessary when newer versions of dependent libraries are introduced. Aspects of C#'s design that were directly influenced by versioning considerations include the separate virtual and override modifiers,
+                the rules for method overload resolution, and support for explicit interface member declarations.
+            </p>
+            <p>
+                In more recent versions, C# has embraced other programming paradigms. C# has included features that support functional programming techniques like lambda expressions. Other new features support separating data and algorithms, like pattern matching.
+            </p>
+        </section>
+
+        <section id="Hello_World" class="main-section">
+            <header> Hello World </header>
+            <p> The "Hello, World" program is traditionally used to introduce a programming language. Here it is in C#:</p>
+            <code> using System;
+
+                class Hello
+                {
+                    static void Main()
+                    {
+                        Console.WriteLine("Hello, World");
+                    }
+                } </code>
+
+            <p> C# source files typically have the file extension .cs. To create this program, first download and install the .NET Core SDK. Then, execute the command dotnet new console -o hello to create a new program and a build script. The program and
+                build script are in the files Program.cs and hello.csproj, respectively. You build and run the application with the run commands: </p>
+            <p> The "Hello, World" program starts with a using directive that references the System namespace. Namespaces provide a hierarchical means of organizing C# programs and libraries. Namespaces contain types and other namespaces—for example, the
+                System namespace contains a number of types, such as the Console class referenced in the program, and a number of other namespaces, such as IO and Collections. A using directive that references a given namespace enables unqualified use
+                of the types that are members of that namespace. Because of the using directive, the program can use Console.WriteLine as shorthand for System.Console.WriteLine. The Hello class declared by the "Hello, World" program has a single member,
+                the method named Main. The Main method is declared with the static modifier. While instance methods can reference a particular enclosing object instance using the keyword this, static methods operate without reference to a particular object.
+                By convention, a static method named Main serves as the entry point of a program. The output of the program is produced by the WriteLine method of the Console class in the System namespace. This class is provided by the standard class
+                libraries, which, by default, are automatically referenced by the compiler.</p>
+        </section>
+
+        <section id="Types_And_Variables" class="main-section">
+            <header> Types and Variables </header>
+            <p> There are two kinds of types in C#: value types and reference types. Variables of value types directly contain their data whereas variables of reference types store references to their data, the latter being known as objects. With reference
+                types, it's possible for two variables to reference the same object and thus possible for operations on one variable to affect the object referenced by the other variable. With value types, the variables each have their own copy of the
+                data, and it isn't possible for operations on one to affect the other (except for ref and out parameter variables). </p>
+
+            <p> C#’s value types are further divided into simple types, enum types, struct types, and nullable value types. C#’s reference types are further divided into class types, interface types, array types, and delegate types. </p>
+            <p> The following outline provides an overview of C#’s type system.
+            </p>
+
+            <ol>
+                <li> Value Types</li>
+                <ul>
+                    <li> Simple Types </li>
+
+                    <li> Enum Types</li>
+
+                    <li> Struct Types</li>
+
+                    <li> Nullable Value Types</li>
+
+                </ul>
+                <li> Reference Types</li>
+                <ul>
+                    <li> Class Types</li>
+                    <li> Interface Types </li>
+                    <li> Array Types</li>
+                    <li> Delegate Types </li>
+                </ul>
+            </ol>
+
+            <p>C#’s <code>bool</code> type is used to represent Boolean values—values that are either <code>true</code> or <code>false</code>.</p>
+            <p>Character and string processing in C# uses Unicode encoding. The <code>char</code> type represents a UTF-16 code unit, and the <code>string</code> type represents a sequence of UTF-16 code units.</p>
+            <p>C# programs use <em>type declarations</em> to create new types. A type declaration specifies the name and the members of the new type. Five of C#’s categories of types are user-definable: class types, struct types, interface types, enum types,
+                and delegate types.</p>
+            <p>A <code>class</code> type defines a data structure that contains data members (fields) and function members (methods, properties, and others). Class types support single inheritance and polymorphism, mechanisms whereby derived classes can
+                extend and specialize base classes.</p>
+            <p>A <code>struct</code> type is similar to a class type in that it represents a structure with data members and function members. However, unlike classes, structs are value types and don't typically require heap allocation. Struct types don't
+                support user-specified inheritance, and all struct types implicitly inherit from type <code>object</code>.</p>
+            <p>An <code>interface</code> type defines a contract as a named set of public function members. A <code>class</code> or <code>struct</code> that implements an <code>interface</code> must provide implementations of the interface’s function members.
+                An <code>interface</code> may inherit from multiple base interfaces, and a <code>class</code> or <code>struct</code> may implement multiple interfaces.</p>
+            <p>A <code>delegate</code> type represents references to methods with a particular parameter list and return type. Delegates make it possible to treat methods as entities that can be assigned to variables and passed as parameters. Delegates are
+                analogous to function types provided by functional languages. They're also similar to the concept of function pointers found in some other languages. Unlike function pointers, delegates are object-oriented and type-safe.</p>
+            <p>The <code>class</code>, <code>struct</code>, <code>interface</code>, and <code>delegate</code> types all support generics, whereby they can be parameterized with other types.</p>
+            <p>An <code>enum</code> type is a distinct type with named constants. Every <code>enum</code> type has an underlying type, which must be one of the eight integral types. The set of values of an <code>enum</code> type is the same as the set of
+                values of the underlying type.</p>
+            <p>C# supports single- and multi-dimensional arrays of any type. Unlike the types listed above, array types don't have to be declared before they can be used. Instead, array types are constructed by following a type name with square brackets.
+                For example, <code>int[]</code> is a single-dimensional array of <code>int</code>, <code>int[,]</code> is a two-dimensional array of <code>int</code>, and <code>int[][]</code> is a single-dimensional array of single-dimensional array of
+                <code>int</code>.</p>
+            <p>Nullable value types also don't have to be declared before they can be used. For each non-nullable value type <code>T</code>, there is a corresponding nullable value type <code>T?</code>, which can hold an additional value, <code>null</code>.
+                For instance, <code>int?</code> is a type that can hold any 32-bit integer or the value <code>null</code>.</p>
+            <p>C#’s type system is unified such that a value of any type can be treated as an <code>object</code>. Every type in C# directly or indirectly derives from the <code>object</code> class type, and <code>object</code> is the ultimate base class
+                of all types. Values of reference types are treated as objects simply by viewing the values as type <code>object</code>. Values of value types are treated as objects by performing <em>boxing</em> and <em>unboxing operations</em>. In the
+                following example, an <code>int</code> value is converted to <code>object</code> and back again to <code>int</code>.</p>
+        </section>
+        <section id="Expressions" class="main-section">
+            <header> Expressions </header>
+            <p><em>Expressions</em> are constructed from <em>operands</em> and <em>operators</em>. The operators of an expression indicate which operations to apply to the operands. Examples of operators include <code>+</code>, <code>-</code>, <code>*</code>,
+                <code>/</code>, and <code>new</code>. Examples of operands include literals, fields, local variables, and expressions.</p>
+            <p>When an expression contains multiple operators, the <em>precedence</em> of the operators controls the order in which the individual operators are evaluated. For example, the expression <code>x + y * z</code> is evaluated as <code>x + (y * z)</code>                because the <code>*</code> operator has higher precedence than the <code>+</code> operator.</p>
+            <p>When an operand occurs between two operators with the same precedence, the <em>associativity</em> of the operators controls the order in which the operations are performed:</p>
+            <ul>
+                <li>Except for the assignment and null-coalescing operators, all binary operators are <em>left-associative</em>, meaning that operations are performed from left to right. For example, <code>x + y + z</code> is evaluated as <code>(x + y) + z</code>.</li>
+                <li>The assignment operators, the null-coalescing <code>??</code> and <code>??=</code> operators, and the conditional operator <code>?:</code> are <em>right-associative</em>, meaning that operations are performed from right to left. For example,
+                    <code>x = y = z</code> is evaluated as <code>x = (y = z)</code>.</li>
+            </ul>
+            <p>Precedence and associativity can be controlled using parentheses. For example, <code>x + y * z</code> first multiplies <code>y</code> by <code>z</code> and then adds the result to <code>x</code>, but <code>(x + y) * z</code> first adds <code>x</code>                and <code>y</code> and then multiplies the result by <code>z</code>.</p>
+        </section>
+        <section id="Statements" class="main-section">
+            <header> Statements </header>
+            <p>The actions of a program are expressed using <em>statements</em>. C# supports several different kinds of statements, a number of which are defined in terms of embedded statements.</p>
+            <p>A <em>block</em> permits multiple statements to be written in contexts where a single statement is allowed. A block consists of a list of statements written between the delimiters <code>{</code> and <code>}</code>.</p>
+            <p><em>Declaration statements</em> are used to declare local variables and constants.</p>
+            <p><em>Expression statements</em> are used to evaluate expressions. Expressions that can be used as statements include method invocations, object allocations using the <code>new</code> operator, assignments using <code>=</code> and the compound
+                assignment operators, increment and decrement operations using the <code>++</code> and <code>--</code> operators and <code>await</code> expressions.</p>
+            <p><em>Selection statements</em> are used to select one of a number of possible statements for execution based on the value of some expression. This group contains the <code>if</code> and <code>switch</code> statements.</p>
+            <p><em>Iteration statements</em> are used to execute repeatedly an embedded statement. This group contains the <code>while</code>, <code>do</code>, <code>for</code>, and <code>foreach</code> statements.</p>
+            <p><em>Jump statements</em> are used to transfer control. This group contains the <code>break</code>, <code>continue</code>, <code>goto</code>, <code>throw</code>, <code>return</code>, and <code>yield</code> statements.</p>
+            <p>The <code>try</code>...<code>catch</code> statement is used to catch exceptions that occur during execution of a block, and the <code>try</code>...<code>finally</code> statement is used to specify finalization code that is always executed,
+                whether an exception occurred or not.</p>
+            <p>The <code>checked</code> and <code>unchecked</code> statements are used to control the overflow-checking context for integral-type arithmetic operations and conversions.</p>
+            <p>The <code>lock</code> statement is used to obtain the mutual-exclusion lock for a given object, execute a statement, and then release the lock.</p>
+            <p>The <code>using</code> statement is used to obtain a resource, execute a statement, and then dispose of that resource.</p>
+            <p>The following lists the kinds of statements that can be used, and provides an example for each.</p>
+            <ul>
+                <li>Local variable declaration:</li>
+            </ul>
+            <pre><code>static void Declarations(string[] args)
+            {
+                int a;
+                int b = 2, c = 3;
+                a = 1;
+                Console.WriteLine(a + b + c);
+            }
+            </code></pre>
+            <ul>
+                <li>Local constant declaration:</li>
+            </ul>
+            <pre><code>static void ConstantDeclarations(string[] args)
+            {
+                const float pi = 3.1415927f;
+                const int r = 25;
+                Console.WriteLine(pi * r * r);
+            }
+            </code></pre>
+            <ul>
+                <li>Expression statement:</li>
+            </ul>
+            <pre><code>static void Expressions(string[] args)
+            {
+                int i;
+                i = 123;                // Expression statement
+                Console.WriteLine(i);   // Expression statement
+                i++;                    // Expression statement
+                Console.WriteLine(i);   // Expression statement
+            }
+            </code></pre>
+            <ul>
+                <li><code>if</code> statement:</li>
+            </ul>
+            <pre><code>static void IfStatement(string[] args)
+            {
+                if (args.Length == 0)
+                {
+                    Console.WriteLine(&quot;No arguments&quot;);
+                }
+                else 
+                {
+                    Console.WriteLine(&quot;One or more arguments&quot;);
+                }
+            }
+            </code></pre>
+            <ul>
+                <li><code>switch</code> statement:</li>
+            </ul>
+            <pre><code>static void SwitchStatement(string[] args)
+            {
+                int n = args.Length;
+                switch (n) 
+                {
+                    case 0:
+                        Console.WriteLine(&quot;No arguments&quot;);
+                        break;
+                    case 1:
+                        Console.WriteLine(&quot;One argument&quot;);
+                        break;
+                    default:
+                        Console.WriteLine($&quot;{n} arguments&quot;);
+                        break;
+                }
+            }
+            </code></pre>
+            <ul>
+                <li><code>while</code> statement:</li>
+            </ul>
+            <pre><code>static void WhileStatement(string[] args)
+            {
+                int i = 0;
+                while (i &lt; args.Length) 
+                {
+                    Console.WriteLine(args[i]);
+                    i++;
+                }
+            }
+            </code></pre>
+            <ul>
+                <li><code>do</code> statement:</li>
+            </ul>
+            <pre><code>static void DoStatement(string[] args)
+            {
+                string s;
+                do 
+                {
+                    s = Console.ReadLine();
+                    Console.WriteLine(s);
+                } while (!string.IsNullOrEmpty(s));
+            }
+            
+            </code></pre>
+            <ul>
+                <li><code>for</code> statement:</li>
+            </ul>
+            <pre><code>static void ForStatement(string[] args)
+            {
+                for (int i = 0; i &lt; args.Length; i++) 
+                {
+                    Console.WriteLine(args[i]);
+                }
+            }
+            </code></pre>
+            <ul>
+                <li><code>foreach</code> statement:</li>
+            </ul>
+            <pre><code>static void ForEachStatement(string[] args)
+            {
+                foreach (string s in args) 
+                {
+                    Console.WriteLine(s);
+                }
+            }
+            </code></pre>
+            <ul>
+                <li><code>break</code> statement:</li>
+            </ul>
+            <pre><code>static void BreakStatement(string[] args)
+            {
+                while (true) 
+                {
+                    string s = Console.ReadLine();
+                    if (string.IsNullOrEmpty(s)) 
+                        break;
+                    Console.WriteLine(s);
+                }
+            }
+            </code></pre>
+            <ul>
+                <li><code>continue</code> statement:</li>
+            </ul>
+            <pre><code">static void ContinueStatement(string[] args)
+            {
+                for (int i = 0; i &lt; args.Length; i++) 
+                {
+                    if (args[i].StartsWith(&quot;/&quot;)) 
+                        continue;
+                    Console.WriteLine(args[i]);
+                }
+            }
+            </code></pre>
+            <ul>
+                <li><code>goto</code> statement:</li>
+            </ul>
+            <pre><code">static void GoToStatement(string[] args)
+            {
+                int i = 0;
+                goto check;
+                loop:
+                Console.WriteLine(args[i++]);
+                check:
+                if (i &lt; args.Length) 
+                    goto loop;
+            }
+            </code></pre>
+            <ul>
+                <li><code>return</code> statement:</li>
+            </ul>
+            <pre><code>static int Add(int a, int b) 
+            {
+                return a + b;
+            }
+            static void ReturnStatement(string[] args)
+            {
+               Console.WriteLine(Add(1, 2));
+               return;
+            }
+            </code></pre>
+            <ul>
+                <li><code>yield</code> statement:</li>
+            </ul>
+            <pre><code>static System.Collections.Generic.IEnumerable&lt;int&gt; Range(int start, int end) 
+            {
+                for (int i = start; i &lt; end; i++) 
+                {
+                    yield return i;
+                }
+                yield break;
+            }
+            static void YieldStatement(string[] args)
+            {
+                foreach (int i in Range(-10,10)) 
+                {
+                    Console.WriteLine(i);
+                }
+            }
+            </code></pre>
+            <ul>
+                <li><code>throw</code> statements and <code>try</code> statements:</li>
+            </ul>
+            <pre><code>static double Divide(double x, double y) 
+            {
+                if (y == 0) 
+                    throw new DivideByZeroException();
+                return x / y;
+            }
+            static void TryCatch(string[] args) 
+            {
+                try 
+                {
+                    if (args.Length != 2) 
+                    {
+                        throw new InvalidOperationException(&quot;Two numbers required&quot;);
+                    }
+                    double x = double.Parse(args[0]);
+                    double y = double.Parse(args[1]);
+                    Console.WriteLine(Divide(x, y));
+                }
+                catch (InvalidOperationException e) 
+                {
+                    Console.WriteLine(e.Message);
+                }
+                finally 
+                {
+                    Console.WriteLine(&quot;Good bye!&quot;);
+                }
+            }
+            </code></pre>
+            <ul>
+                <li><code>checked</code> and <code>unchecked</code> statements:</li>
+            </ul>
+            <pre><code>static void CheckedUnchecked(string[] args) 
+            {
+                int x = int.MaxValue;
+                unchecked 
+                {
+                    Console.WriteLine(x + 1);  // Overflow
+                }
+                checked 
+                {
+                    Console.WriteLine(x + 1);  // Exception
+                }     
+            }
+            </code></pre>
+            <ul>
+                <li><code>lock</code> statement:</li>
+            </ul>
+            <pre><code>class Account
+            {
+                decimal balance;
+                private readonly object sync = new object();
+                public void Withdraw(decimal amount) 
+                {
+                    lock (sync) 
+                    {
+                        if (amount &gt; balance) 
+                        {
+                            throw new Exception(
+                                &quot;Insufficient funds&quot;);
+                        }
+                        balance -= amount;
+                    }
+                }
+            }
+            </code></pre>
+            <ul>
+                <li><code>using</code> statement:</li>
+            </ul>
+            <pre><code>static void UsingStatement(string[] args) 
+            {
+                using (TextWriter w = File.CreateText(&quot;test.txt&quot;)) 
+                {
+                    w.WriteLine(&quot;Line one&quot;);
+                    w.WriteLine(&quot;Line two&quot;);
+                    w.WriteLine(&quot;Line three&quot;);
+                }
+            }
+            </code></pre>
+
+            </div>
+        </section>
+        <section id="References" class="main-section">
+            <header> References</header>
+            <p> All text from this page was taken from Microsoft's 'Tour of C#'. </p>
+        </section>
+    </main>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</body>
